@@ -57,7 +57,7 @@ static UINT indicators[] =
 
 CMainFrame::CMainFrame()
 {
-	// TODO: 在此添加成员初始化代码
+	// TODO: 在此添加成员初始化代码ok
 }
 
 CMainFrame::~CMainFrame()
