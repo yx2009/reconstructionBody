@@ -359,18 +359,24 @@ public:
 public:
 	bool applyDeform()
 	{
-
+		time_t startT = clock();
+		time_t endT;
 		//// Centroid
 		//mid = 0.5*(V.colwise().maxCoeff() + V.colwise().minCoeff());
 		// Precomputation
-		arap_data.max_iter = 100;
+		arap_data.max_iter = 1;
 		std::cout << "arap precomputation......";
 		bool ret = arapPrecompute(T, F, V.cols(), b, arap_data);
 		assert(ret  && "arap precompute false");
 		Eigen::MatrixXd bc;
 		std::cout << "arap solving......";
-		ret = arapSolve(bc, arap_data, V);
-
+		ret = arapSolve(bc, arap_data, V); 
+		endT = clock();
+		double runtim = (double)(endT - startT) / CLOCKS_PER_SEC;
+		
+		CString t;
+		t.Format(_T("%f"), runtim);
+		AfxMessageBox(t);
 		for (int i = 0; i < V.rows(); i++)
 		{
 			result[i * 3 + 0] = T(i, 0);
