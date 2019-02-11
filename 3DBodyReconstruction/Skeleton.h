@@ -107,16 +107,16 @@ typedef struct {
 struct t_Visual
 {
 	int		dataFormat;
-	tVector	*vertex;		// Vertex顶点
-	tVector	*Gvertex;		// Vertex顶点
+	tVector	*vertex = nullptr;		// Vertex顶点
+	tVector	*Gvertex = nullptr;		// Vertex顶点
 	long	vertexCnt;		// NUMBER OF VERTICES IN VISUAL 顶点数量
-	tVector	*normal;		// Vertex顶点
-	tVector	*deformData;	// DEFORMED VERTEX DATA 变形的顶点数据
-	tVector	*texture;		// Vertex 顶点
-	t_faceIndex	*index;	
-	v_faceIndex *vfindex;	//用点索引面
+	tVector	*normal = nullptr;		// Vertex顶点
+	tVector	*deformData = nullptr;	// DEFORMED VERTEX DATA 变形的顶点数据
+	tVector	*texture = nullptr;		// Vertex 顶点
+	t_faceIndex	*index = nullptr;
+	v_faceIndex *vfindex = nullptr;	//用点索引面
 	long	faceCnt;		// NUMBER OF FACES IN VISUAL 面的数量
-	tVector *matColor;		// POINTER TO VECTOR 矢量的指针
+	tVector *matColor = nullptr;		// POINTER TO VECTOR 矢量的指针
 	int		matCnt;
 	long	vPerFace;		// VERTICES PER FACE, EITHER 3 OR 4  面的顶点数量，三或四
 	tColor  Ka,Kd,Ks;		// COLOR FOR OBJECT对象的颜色
@@ -125,12 +125,12 @@ struct t_Visual
 	uint    glTex;
 	char    map2[255];
 	uint    glTex2;
-	long	*texData;		//
+	long	*texData = nullptr;		//
 	long	normalCnt;		// NUMBER OF VERTICES IN VISUAL 顶点数量
 	long	uvCnt;		// NUMBER OF VERTICES IN VISUAL
 	tVector bbox[8];		// BBOX COORDS
 	tVector transBBox[8];
-	BYTE *  m_pRGB;          //add gy
+	BYTE *  m_pRGB = nullptr;          //add gy
 	double  m_DfDistance;    //add gy
 	CString mtl;             //add gy
 	CString mtlend0;             //add gy
@@ -138,15 +138,15 @@ struct t_Visual
 	add by yingxiang 20170513
 	*/
 	short  TextureStatu;//30代表加载高斯曲率颜色，31代表加载平均曲率颜色，2代表加载纹理，1代表加载颜色,0代表没有纹理
-	tVector	*vertexColor;		// Vertex顶点颜色 add by yingxiang 20170711
+	tVector	*vertexColor = nullptr;		// Vertex顶点颜色 add by yingxiang 20170711
 	double vertexMax_x, vertexMax_y, vertexMax_z, vertexMin_x, vertexMin_y, vertexMin_z;
 	double GuassMaxValue, GuassMinValue;
-	double *GuassCurvature;
-	double *HCurvature;//平均曲率
-	mechIndex *mechindexs;
+	double *GuassCurvature = nullptr;
+	double *HCurvature = nullptr;//平均曲率
+	mechIndex *mechindexs = nullptr;
 	long	mechSize;
-	tVector *sNeiPoints;
-	tVector *tNeiPoints;
+	tVector *sNeiPoints = nullptr;
+	tVector *tNeiPoints = nullptr;
 	cv::Mat texMat;
 	/*end
 	add by yingxiang 20170711
