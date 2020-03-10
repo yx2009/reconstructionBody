@@ -176,7 +176,7 @@ struct t_Bone
 	char	name[80];					// BONE NAME
 	long	flags;						// BONE FLAGS
 	// HIERARCHY INFO
-	t_Bone	*parent;					// POINTER TO PARENT BONE
+	t_Bone	*parent = nullptr;					// POINTER TO PARENT BONE
 	int 	childCnt;					// COUNT OF CHILD BONES
 	t_Bone	*children;					// POINTER TO CHILDREN
 	// TRANSFORMATION INFO
